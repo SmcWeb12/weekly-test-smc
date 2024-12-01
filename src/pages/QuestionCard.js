@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const QuestionCard = ({
   question,
@@ -8,17 +8,42 @@ const QuestionCard = ({
   totalQuestions,
   isSubmitted,
 }) => {
+  const [rotation, setRotation] = useState({ x: 0, y: 0 }); // Store rotation values
   const userAnswer = userAnswers.find((a) => a.questionId === question.id);
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20; // Rotate by 20 degrees
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -20; // Rotate by 20 degrees
+    setRotation({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 }); // Reset rotation
+  };
 
   return (
     <div
-      className="relative border-2 border-gray-200 p-6 rounded-xl shadow-xl bg-cover bg-center transition-transform transform hover:scale-105"
+      className="relative p-6 rounded-xl shadow-xl transition-transform duration-500"
       style={{
-        backgroundImage: `url(${question.image || "/default-background.jpg"})`,
+        transform: `rotateX(${rotation.y}deg) rotateY(${rotation.x}deg)`,
+        transformStyle: "preserve-3d",
+        perspective: "1000px",
       }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
+      {/* Background */}
+      <div
+        className="absolute inset-0 rounded-xl bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${question.image || "/default-background.jpg"})`,
+          filter: "brightness(0.8)",
+        }}
+      ></div>
+
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50 rounded-xl"></div>
+      <div className="absolute inset-0 bg-black opacity-30 rounded-xl"></div>
 
       {/* Content */}
       <div className="relative z-10 text-white">
