@@ -1,32 +1,91 @@
 [
   {
-    "id": "q1",
-    "question": "What is the capital of India?",
-    "options": ["Delhi", "Mumbai", "Kolkata", "Chennai"],
-    "answer": "Delhi"
+    "id": "q43",
+    "question": "यदि f x = x^2 + 2x + 1, तो f 3 का मान क्या होगा?",
+    "options": ["16", "14", "18", "12"],
+    "answer": "16"
   },
   {
-    "id": "q2",
-    "question": "Who is the Prime Minister of India?",
-    "options": ["Narendra Modi", "Rahul Gandhi", "Amit Shah", "Arvind Kejriwal"],
-    "answer": "Narendra Modi"
+    "id": "q44",
+    "question": "यदि A = {1, 2, 3} और B = {a, b, c}, तो A से B तक का एक फंक्शन क्या हो सकता है?",
+    "options": ["{1, a}, {2, b}, {3, c}", "{1, a}, {2, b}, {3, b}", "{1, c}, {2, b}, {3, a}", "सभी"],
+    "answer": "सभी"
   },
   {
-    "id": "q3",
-    "question": "What is the square root of 64?",
-    "options": ["6", "8", "10", "12"],
-    "answer": "8"
+    "id": "q45",
+    "question": "यदि f x = 5x + 2 है, तो f 0 का मान क्या होगा?",
+    "options": ["2", "5", "0", "7"],
+    "answer": "2"
   },
   {
-    "id": "q4",
-    "question": "Which planet is known as the Red Planet?",
-    "options": ["Earth", "Mars", "Jupiter", "Venus"],
-    "answer": "Mars"
+    "id": "q46",
+    "question": "फंक्शन f x की संज्ञा क्या होती है?",
+    "options": ["फंक्शन के डोमेन और कोडोमेन के बीच संबंध", "सिर्फ़ एक संख्या", "रिलेशन और सेट का वर्गीकरण", "फंक्शन के तत्वों का आकार"],
+    "answer": "फंक्शन के डोमेन और कोडोमेन के बीच संबंध"
   },
   {
-    "id": "q5",
-    "question": "Which is the largest ocean on Earth?",
-    "options": ["Atlantic", "Indian", "Pacific", "Arctic"],
-    "answer": "Pacific"
-  }
-]
+    "id": "q47",
+    "question": "क्या एक रेखीय फंक्शन f x = 3x + 5 है?",
+    "options": ["हां", "नहीं", "कभी नहीं", "सभी"],
+    "answer": "हां"
+  },
+  {
+    "id": "q48",
+    "question": "यदि f x = x^2, तो f -3 का मान क्या होगा?",
+    "options": ["9", "6", "3", "12"],
+    "answer": "9"
+  },
+  {
+    "id": "q49",
+    "question": "क्या एक सेट के सभी तत्वों को दूसरे सेट के तत्वों से जोड़ना आवश्यक है?",
+    "options": ["हां", "नहीं", "सिर्फ़ कुछ", "कभी नहीं"],
+    "answer": "हां"
+  },
+  {
+    "id": "q50",
+    "question": "एक रिलेशन R में a से b का संबंध कैसे व्यक्त किया जाता है?",
+    "options": ["(a, b)", "(b, a)", "(a, b) ∈ R", "सभी"],
+    "answer": "(a, b) ∈ R"
+  },
+  {
+    "id": "q51",
+    "question": "क्या एक फंक्शन f x में डोमेन के प्रत्येक तत्व का एक ही मान होना चाहिए?",
+    "options": ["हां", "नहीं", "सिर्फ़ कुछ", "कभी नहीं"],
+    "answer": "हां"
+  },
+  {
+    "id": "q52",
+    "question": "यदि f x = x^2 + 1, तो f 2 का मान क्या होगा?",
+    "options": ["5", "6", "7", "8"],
+    "answer": "5"
+  },
+  {
+    "id": "q53",
+    "question": "किसी फंक्शन में कोडोमेन क्या होता है?",
+    "options": ["वह सेट जिसमें से फंक्शन के मान आते हैं", "वह सेट जिसमें से फंक्शन के तत्व आते हैं", "वह सेट जिसमें से तत्व निकालने की अनुमति नहीं होती", "उपरोक्त सभी"],
+    "answer": "वह सेट जिसमें से फंक्शन के मान आते हैं"
+  },
+  
+      {
+        "id": "q108",
+        "question": "यदि f x = 3x square + 5x - 4 और g x = x square - 2x + 1 हो, तो f - g 2 का मान क्या होगा?",
+        "options": ["6", "7", "8", "9"],
+        "answer": "6"
+      },
+      {
+        "id": "q109",
+        "question": "यदि f x = x cube + 2x square - 5x + 1 और g x = 2x square + 3x - 4 हो, तो (f + g) 1 का मान क्या होगा?",
+        "options": ["-1", "0", "1", "2"],
+        "answer": "1"
+      },
+      {
+        "id": "q110",
+        "question": "यदि f x = x square + 3x + 2 और g x = 2x square - 5x + 4 हो, तो f x - g x के लिए x = 1 का मान क्या होगा?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "3"
+      }
+    ]
+    
+
+  
+
