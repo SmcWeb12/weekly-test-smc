@@ -85,10 +85,13 @@ const TestPage = () => {
         Time Left: {Math.floor(timer / 60)}:{String(timer % 60).padStart(2, "0")}
       </div>
 
-      <div className="p-8 max-w-4xl mx-auto bg-white shadow-2xl rounded-xl mt-10">
-        <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">
-          Welcome to the Test!
-        </h2>
+      <div className="p-4 md:p-8 max-w-4xl mx-auto bg-white shadow-2xl rounded-xl mt-10">
+        {/* Welcome Text and Images */}
+        <div className="flex flex-col items-center mb-8 md:flex-row md:justify-between">
+          <img src="/Screenshot 2024-11-28 214918.png" alt="left image" className="w-16 h-16 object-cover mb-4 md:mb-0" />
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 text-center">Welcome to the SMC WeeklyTest Chapter 2!</h2>
+          <img src="/Screenshot 2024-11-28 214918.png" alt="right image" className="w-16 h-16 object-cover mb-4 md:mb-0" />
+        </div>
 
         {/* Check if questions exist */}
         {questions.length === 0 ? (
@@ -114,11 +117,11 @@ const TestPage = () => {
         )}
 
         {/* Submit Button */}
-        <div className="mt-10 text-right">
+        <div className="mt-10 text-center">
           <button
             onClick={handleSubmitTest}
             disabled={isSubmitted || timer <= 0}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg disabled:bg-gray-400"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg disabled:bg-gray-400 transition-all duration-300 transform hover:scale-105"
           >
             {isSubmitted ? "Submitted" : "Submit Test"}
           </button>
