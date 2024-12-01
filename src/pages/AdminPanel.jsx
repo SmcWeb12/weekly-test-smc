@@ -76,52 +76,98 @@ const AdminPanel = () => {
 
         <div className="space-y-8">
           {results.map((result, index) => (
-            <div key={result.id} className="card bg-cover bg-center rounded-xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105" 
-                 style={{ backgroundImage: `url('/images/Screenshot-2024-11-28-214918.png')`, backgroundSize: 'cover' }}>
-              
-              {/* Updated gradient overlay with a custom color (blue) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-transparent to-transparent rounded-xl"></div>
-              
-              <div className="relative p-6 z-10">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-semibold text-gray-100">{`Student ${index + 1}: ${result.name}`}</h3>
-                  <button
-                    onClick={() => {
-                      setDeleteId(result.id);
-                      setShowDeleteConfirm(true);
-                    }}
-                    className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-all"
-                  >
-                    Delete
-                  </button>
-                </div>
+            <div
+              key={result.id}
+              className="group relative card-container p-8"
+              style={{
+                perspective: "1500px", // Adding perspective for more pronounced 3D effect
+              }}
+            >
+              {/* 3D Card */}
+              <div
+                className="card w-full sm:w-96 h-[500px] bg-cover bg-center rounded-xl shadow-lg transition-transform transform group-hover:rotate-x-6 group-hover:rotate-y-6 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-600"
+                style={{
+                  backgroundImage: `url('/images/Screenshot-2024-11-28-214918.png')`,
+                  backgroundSize: "cover",
+                }}
+              >
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-transparent to-transparent rounded-xl transition-opacity duration-300 group-hover:opacity-90"></div>
 
-                <div className="mt-4">
-                  <p><strong>Email:</strong> {result.email}</p>
-                  <p><strong>Phone:</strong> {result.phone}</p>
-                  <p><strong>Father's Name:</strong> {result.fathersName}</p>
-                  <p><strong>Batch Time:</strong> {result.batchTime}</p>
-                  <p><strong>Score:</strong> {result.score}</p>
-                  <p><strong>Total Questions:</strong> {result.totalQuestions}</p>
-                  <p><strong>Correct Answers:</strong> {result.correctAnswers}</p>
-                </div>
+                <div className="relative z-10 p-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-semibold text-gray-100">{`Student ${index + 1}: ${result.name}`}</h3>
+                    <button
+                      onClick={() => {
+                        setDeleteId(result.id);
+                        setShowDeleteConfirm(true);
+                      }}
+                      className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-all"
+                    >
+                      Delete
+                    </button>
+                  </div>
 
-                {/* Displaying the answers */}
-                {result.questions && result.questions.length > 0 && result.questions.map((question, qIndex) => {
-                  const userAnswer = result.userAnswers.find((answer) => answer.questionId === question.id);
-                  const isCorrect = userAnswer?.answer === question.answer;
-                  return (
-                    <div key={question.id} className="bg-white p-4 rounded-lg shadow-sm mt-4 bg-opacity-90">
-                      <p><strong>{qIndex + 1}. {question.question}</strong></p>
-                      <p className={`text-lg ${isCorrect ? "text-green-600" : "text-red-600"}`}>
-                        <strong>Your Answer:</strong> {userAnswer?.answer || "N/A"}
-                      </p>
-                      <p className={`text-lg ${isCorrect ? "text-green-600" : "text-red-600"}`}>
-                        <strong>Correct Answer:</strong> {question.answer}
-                      </p>
-                    </div>
-                  );
-                })}
+                  <div className="mt-4 text-sm sm:text-base">
+                    <p>
+                      <strong>Email:</strong> {result.email}
+                    </p>
+                    <p>
+                      <strong>Phone:</strong> {result.phone}
+                    </p>
+                    <p>
+                      <strong>Father's Name:</strong> {result.fathersName}
+                    </p>
+                    <p>
+                      <strong>Batch Time:</strong> {result.batchTime}
+                    </p>
+                    <p>
+                      <strong>Score:</strong> {result.score}
+                    </p>
+                    <p>
+                      <strong>Total Questions:</strong> {result.totalQuestions}
+                    </p>
+                    <p>
+                      <strong>Correct Answers:</strong> {result.correctAnswers}
+                    </p>
+                  </div>
+
+                  {/* Displaying the answers */}
+                  {result.questions &&
+                    result.questions.length > 0 &&
+                    result.questions.map((question, qIndex) => {
+                      const userAnswer = result.userAnswers.find(
+                        (answer) => answer.questionId === question.id
+                      );
+                      const isCorrect = userAnswer?.answer === question.answer;
+                      return (
+                        <div
+                          key={question.id}
+                          className="bg-white p-4 rounded-lg shadow-sm mt-4 bg-opacity-90"
+                        >
+                          <p>
+                            <strong>
+                              {qIndex + 1}. {question.question}
+                            </strong>
+                          </p>
+                          <p
+                            className={`text-lg ${
+                              isCorrect ? "text-green-600" : "text-red-600"
+                            }`}
+                          >
+                            <strong>Your Answer:</strong> {userAnswer?.answer || "N/A"}
+                          </p>
+                          <p
+                            className={`text-lg ${
+                              isCorrect ? "text-green-600" : "text-red-600"
+                            }`}
+                          >
+                            <strong>Correct Answer:</strong> {question.answer}
+                          </p>
+                        </div>
+                      );
+                    })}
+                </div>
               </div>
             </div>
           ))}
