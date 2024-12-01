@@ -152,9 +152,9 @@ const SignupPage = () => {
 
         <div className="mt-6 text-center text-sm text-gray-700">
           <p>
-            Already have an account?{" "}
+      class 11th test chapter-2?{" "}
             <a href="/login" className="text-indigo-500 hover:underline">
-              Login here
+           
             </a>
           </p>
         </div>
